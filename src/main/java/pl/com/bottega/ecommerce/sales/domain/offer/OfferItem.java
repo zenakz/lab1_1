@@ -59,7 +59,7 @@ public class OfferItem {
 
         BigDecimal discountValue = new BigDecimal(0);
         if (discount != null) {
-            discountValue = discountValue.subtract(discount);
+            discountValue = discountValue.add(discount);
         }
 
         this.totalCost = productPrice.multiply(new BigDecimal(quantity))
