@@ -166,7 +166,11 @@ public class OfferItem {
         } else if (!productId.equals(other.productId)) {
             return false;
         }
-        if (productType != other.productType) {
+        if (productType == null) {
+            if (other.productType != null) {
+                return false;
+            }
+        } else if (!productType.equals(other.productType)) {
             return false;
         }
 
