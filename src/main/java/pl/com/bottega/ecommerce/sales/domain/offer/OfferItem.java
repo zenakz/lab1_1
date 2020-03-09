@@ -47,6 +47,8 @@ public class OfferItem {
         this.totalCost.setDenomination(product.getPrice().getDenomination().multiply(new BigDecimal(quantity)).subtract(discountValue));
     }
 
+    public Product getProduct(){return product;}
+
     public Money getTotalCost() {
         return totalCost;
     }
