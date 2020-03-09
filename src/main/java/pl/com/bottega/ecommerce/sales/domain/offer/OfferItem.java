@@ -80,11 +80,7 @@ public class OfferItem {
         OfferItem other = (OfferItem) obj;
         return Objects.equals(discount, other.discount)
                && Objects.equals(discountCause, other.discountCause)
-               && Objects.equals(product.getId(), other.product.getId())
-               && Objects.equals(product.getName(), other.product.getName())
-               && Objects.equals(product.getPrice(), other.product.getPrice())
-               && Objects.equals(product.getSnapshotDate(), other.product.getSnapshotDate())
-               && Objects.equals(product.getType(), other.product.getType())
+               && Objects.equals(product, other.product)
                && quantity == other.quantity
                && Objects.equals(totalCost, other.totalCost);
     }

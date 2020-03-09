@@ -1,6 +1,7 @@
 package pl.com.bottega.ecommerce.sales.domain.offer;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class Product {
     private String id;
@@ -35,5 +36,18 @@ public class Product {
 
     public String getType() {
         return type;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) return false;
+        if (getClass() != obj.getClass()) return false;
+        if (this == obj) return true;
+        Product product = (Product) obj;
+        return Objects.equals(getId(), product.getId()) &&
+               Objects.equals(getPrice(), product.getPrice()) &&
+               Objects.equals(getName(), product.getName()) &&
+               Objects.equals(getSnapshotDate(), product.getSnapshotDate()) &&
+               Objects.equals(getType(), product.getType());
     }
 }
