@@ -92,33 +92,7 @@ public class OfferItem {
      * @return
      */
     public boolean sameAs(OfferItem other, double delta) {
-        if (product.getPrice() == null) {
-            if (other.product.getPrice() != null) {
-                return false;
-            }
-        } else if (!product.getPrice().equals(other.product.getPrice())) {
-            return false;
-        }
-        if (product.getName() == null) {
-            if (other.product.getName() != null) {
-                return false;
-            }
-        } else if (!product.getName().equals(other.product.getName())) {
-            return false;
-        }
-
-        if (product.getId() == null) {
-            if (other.product.getId() != null) {
-                return false;
-            }
-        } else if (!product.getId().equals(other.product.getId())) {
-            return false;
-        }
-        if (product.getType() == null) {
-            if (other.product.getType() != null) {
-                return false;
-            }
-        } else if (!product.getType().equals(other.product.getType())) {
+        if(!product.equals(other)){
             return false;
         }
 
