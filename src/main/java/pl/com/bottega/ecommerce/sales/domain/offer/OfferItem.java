@@ -44,10 +44,12 @@ public class OfferItem {
             discountValue = discountValue.add(discount.getDenomination());
         }
 
-        this.totalCost.setDenomination(product.getPrice().getDenomination().multiply(new BigDecimal(quantity)).subtract(discountValue));
+        this.totalCost.setDenomination(product.getPrice().multiply(quantity).subtract(discount).getDenomination());
     }
 
-    public Product getProduct(){return product;}
+    public Product getProduct() {
+        return product;
+    }
 
     public Money getTotalCost() {
         return totalCost;
@@ -80,11 +82,8 @@ public class OfferItem {
             return false;
         }
         OfferItem other = (OfferItem) obj;
-        return Objects.equals(discount, other.discount)
-               && Objects.equals(discountCause, other.discountCause)
-               && Objects.equals(product, other.product)
-               && quantity == other.quantity
-               && Objects.equals(totalCost, other.totalCost);
+        return Objects.equals(discount, other.discount) && Objects.equals(discountCause, other.discountCause) && Objects.equals(product,
+                other.product) && quantity == other.quantity && Objects.equals(totalCost, other.totalCost);
     }
 
     /**
