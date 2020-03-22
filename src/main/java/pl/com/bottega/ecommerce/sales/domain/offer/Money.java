@@ -21,12 +21,12 @@ public class Money {
         this.denomination = denomination;
     }
 
-    Money subtract(Money subtrahend){
-        return new Money(denomination.subtract(subtrahend.getDenomination()),currency);
+    Money subtract(Money subtrahend) {
+        return new Money(denomination.subtract(subtrahend.getDenomination()), currency);
     }
 
-    Money multiply(int factor){
-        return new Money(denomination.multiply(BigDecimal.valueOf(factor)),currency);
+    Money multiply(int factor) {
+        return new Money(denomination.multiply(BigDecimal.valueOf(factor)), currency);
     }
 
     public Currency getCurrency() {
